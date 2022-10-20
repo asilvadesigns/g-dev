@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>todo app</title>
+    </head>
+    <body>
+        <div></div>
+        <input type="text" class="hello"/>
+        <button>add todo</button>
+
+        <script>
+            const inputElement = document.querySelector('input')
+            const buttonElement = document.querySelector('button')
+            const divElement = document.querySelector('div')
+
+            buttonElement.addEventListener('click', function() {
+                // container
+                const newDivElement = document.createElement('DIV')
+
+                // input element
+                const newInputElement = document.createElement('INPUT')
+                newInputElement.value = inputElement.value
+
+                // button element
+                const newButtonElement = document.createElement('BUTTON')
+                newButtonElement.innerText = 'delete'
+                newButtonElement.onclick = function() {
+                    console.log('clicked button')
+                }
+
+                // filling the container
+                newDivElement.appendChild(newInputElement)
+                newDivElement.appendChild(newButtonElement)
+
+                // add it to the DOM.
+                divElement.appendChild(newDivElement)
+            })
+        </script>
+    </body>
+</html>
